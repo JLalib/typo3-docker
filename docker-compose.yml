@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  typo3:
+    image: martinhelmich/typo3:13
+    container_name: typo3
+    restart: unless-stopped
+    environment:
+      - TYPO3_DB_HOST=db
+      - TYPO3_DB_USERNAME=typo3
+      - TYPO3_DB_PASSWORD=typo3password123
+      - TYPO3_DB_DATABASE=typo3
+      - TYPO3_DB_DRIVER=mysqli
+    ports:
+      - "80:80"
+    volumes:
+      - typo3_fileadmin:/var/www/html/fileadmin
+      - typo3_typo3conf:/var/www/html/typo3conf
+      - typo3_typo3temp:/var/www/html/typo3temp
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: mariadb:11
+    container_name: typo3-db
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpassword123
+      - MYSQL_USER=typo3
+      - MYSQL_PASSWORD=typo3password123
+      - MYSQL_DATABASE=typo3
+      - MYSQL_INITDB_ARGS=--character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - typo3_db:/var/lib/mysql
+
+volumes:
+  typo3_fileadmin:
+  typo3_typo3conf:
+  typo3_typo3temp:
+  typo3_db:
