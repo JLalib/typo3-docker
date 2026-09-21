@@ -1,49 +1,47 @@
 # 🐳 TYPO3 Docker - CMS Profesional Autohospedado Enterprise-Grade
 
-[![GitHub Stars](https://img.shields.io/github/stars/martin-helmich/docker-typo3?style=social)](https://github.com/martin-helmich/docker-typo3)
-[![Docker Pulls](https://img.shields.io/docker/pulls/martinhelmich/typo3)](https://hub.docker.com/r/martinhelmich/typo3)
-[![License](https://img.shields.io/badge/License-GPL--3.0-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
-[![TYPO3 Version](https://img.shields.io/badge/TYPO3-13.4%20LTS-orange)](https://typo3.org/download/)
-[![PHP Version](https://img.shields.io/badge/PHP-8.1%2B-purple)](https://www.php.net/)
+[![GitHub Stars](https://img.shields.io/github/stars/martin-helmich/docker-typo3?style=flat-square&logo=github)](https://github.com/martin-helmich/docker-typo3)
+[![Docker Pulls](https://img.shields.io/docker/pulls/martinhelmich/typo3?style=flat-square&logo=docker)](https://hub.docker.com/r/martinhelmich/typo3)
+[![License](https://img.shields.io/badge/License-GPL--3.0-blue?style=flat-square)](https://www.gnu.org/licenses/gpl-3.0.html)
+[![TYPO3 Version](https://img.shields.io/badge/TYPO3-13.4%20LTS-orange?style=flat-square&logo=typo3)](https://typo3.org)
 
 ## 📋 Descripción general
 
-**TYPO3 en Docker** es una solución completa para desplegar el CMS profesional enterprise-grade más potente del mercado en contenedores. Basado en la imagen oficial de **Martin Helmich** (276+ commits, 117k+ instalaciones activas mundiales), proporciona un sistema de gestión de contenidos robusto y flexible con arquitectura multi-usuario, permisos granulares por página, editor WYSIWYG integrado, menús dinámicos, media management, marketplace de extensiones ilimitado (TER), workflows staging/live, caché avanzado y soporte nativo para MySQL/MariaDB/PostgreSQL.
+**TYPO3 en Docker** es un CMS profesional autohospedado basado en PHP diseñado para empresas y portales grandes, que proporciona un sistema de gestión de contenidos robusto y flexible con editor WYSIWYG, multi-usuario con permisos granulares (por página, por usuario), menús dinámicos, media management, extensiones ilimitadas vía marketplace TER, staging/live workflows, backend poderoso, caché avanzado, soporte MySQL/MariaDB/PostgreSQL, todo ejecutándose en Docker bajo tu control sin licencias restrictivas.
 
-> 🎯 **Propuesta clave**: Enterprise CMS self-hosted sin licencias restrictivas, bajo tu control total, production-ready con 20+ años de historia enterprise.
+La imagen Docker oficial es mantenida por **Martin Helmich** (martin-helmich/docker-typo3) con 117+ stars en GitHub, soporta versiones 6.2 → 13.4, y está lista para producción con 276+ commits recientes. TYPO3 cuenta con 117k+ instalaciones activas worldwide y 20+ años de historia enterprise.
 
 ## ✨ Características principales
 
-- **Contenidos flexibles** — Estructura personalizable, custom fields, tipos de contenido ilimitados
-- **Multi-usuario enterprise** — Usuarios, grupos, roles (admin, editor, viewer), permisos granulares por página
-- **Editor WYSIWYG (RTE)** — Rich-text editor integrado con formatting, media, links, drag-drop
-- **Menús dinámicos** — Generación automática desde page tree, responsive, jerárquicos
-- **Media Manager** — Library de assets, subida imágenes/PDFs, organización carpetas, metadata
-- **Extensiones ilimitadas** — TER marketplace (miles de extensiones), desarrollo custom, sin limitaciones
-- **Staging/Live Workflow** — Publicación draft → staging → live, proceso aprobación, historial versiones
-- **Backend robusto** — Database abstraction, multi-DB support (MySQL, PostgreSQL, MariaDB)
-- **Caché avanzado** — PAGE cache, TYPO script cache, HTTP cache, performance tuned production-ready
-- **Permisos granulares** — Access control per-page, user groups, roles, auditing, security
-- **Multi-idioma (i18n)** — Soporte múltiples idiomas, traducciones, fallback, alcance global
-- **Multi-site** — Single instalación, múltiples sites, compartir extensiones, escalable
-- **Template system** — Fluid templating + TypoScript
-- **Logging/Auditing** — Trazabilidad completa de acciones
-- **Backup integration** — Compatible con estrategias de backup estándar
+- **Contenidos flexibles**: Estructura contenido personalizable, fields custom, tipos de contenido sin limitaciones
+- **Multi-usuario**: Usuarios, grupos, roles con permisos granulares por página (editor, viewer, admin)
+- **Editor WYSIWYG**: Rich-text editor integrado con formatting, media, links, drag-drop, user-friendly
+- **Menús dinámicos**: Genera menús desde page tree automático, responsive, hierarchical, fácil
+- **Media manager**: Library assets, subir imágenes/PDFs, organizar carpetas, metadata
+- **Extensiones ilimitadas**: TER marketplace (miles), desarrollo custom, plugins, sin limitaciones
+- **Staging/Live**: Workflow publishing, draft → staging → live, approval process, historia
+- **Backend robusto**: Database abstraction, multi-DB support (MySQL, PostgreSQL, MariaDB), confiable
+- **Caché avanzado**: PAGE cache, TYPO cache, HTTP cache, performance tuned, production-ready
+- **Permisos granulares**: Access control per-page, user groups, roles, auditing, security
+- **Multi-idioma**: i18n soporte, multiple languages, translations, fallback, global
+- **Multi-site**: Single instalación, múltiples sites, compartir extensiones, escalable
+- **REST API**: Unofficial REST API disponible
+- **Logging/auditing**: Registro completo de actividades
+- **Backup integration**: Herramientas de backup integradas
 
 ## 📋 Requisitos del sistema
 
 - **Docker & Docker Compose v2+**
-- **RAM**: 2 GB - 4 GB mínimo (PHP app ligera)
-- **Disco**: 10 GB - 100+ GB (según contenidos + media)
-- **Puertos**: TCP 80 (HTTP) o 443 (HTTPS via reverse proxy)
-- **PHP**: 8.1+ (bundled en imagen Docker)
-- **Base de datos**: MySQL 5.7+ / MariaDB 10.3+ / PostgreSQL 12+ (separado en compose)
-- **Web Server**: Apache2 + mod_php (bundled en imagen)
-- **Procesamiento imágenes**: GD Library, Imagick (incluidos)
+- **2 GB - 4 GB RAM** mínimo (PHP app ligera)
+- **10 GB - 100+ GB** espacio disco (según contenidos + media)
+- **Puerto TCP**: 80 (HTTP) o 443 (HTTPS reverse proxy)
+- **PHP 8.1+** (bundled en imagen Docker)
+- **MySQL 5.7+ / MariaDB 10.3+ / PostgreSQL 12+** (separado en compose)
+- **Apache2 + mod_php** (bundled en imagen Docker)
+- **GD Library, Imagick** (para procesamiento imágenes)
 - **Opcional**: Redis (session storage, caching)
 - **Opcional**: Elasticsearch (indexed search)
-
-> ⚠️ **Nota producción**: Imagen NO recomendada para producción sin hardening (SSL, security headers, etc). Usar reverse proxy nginx/Apache en frente con HTTPS.
+- ⚠️ **No para desarrollo solo**: Imagen NO recomendada producción sin hardening (SSL, security headers, etc). Usar reverse proxy nginx/Apache en frente con HTTPS
 
 ## 🐳 Instalación
 
@@ -112,108 +110,191 @@ docker compose logs -f typo3
 
 ### Paso 3: Acceder install tool
 
-```
+```bash
 # Abre en navegador:
 http://localhost/typo3/install
 
 # Sigue wizard de setup
 ```
 
-### Acceso a TYPO3
+### Acceder a TYPO3
 
-| Componente | URL |
-|------------|-----|
+| Acceso | URL |
+|--------|-----|
 | 🌐 **Frontend TYPO3** (sitio web) | `http://localhost` |
 | 🔧 **Backend TYPO3** (admin) | `http://localhost/typo3` |
 
+### Setup inicial (primer acceso)
+
+1. Abre `http://localhost/typo3/install`
+2. Install tool wizard → Database credentials (usa env variables)
+3. Elige usuario admin (email + password)
+4. Select TYPO3 distribution (Blank, Introduction Package, etc)
+5. Finish → redirect Backend
+6. Login con admin credentials
+7. ¡Listo para gestionar contenidos!
+
+💡 **Desde otros dispositivos**: Usa la IP de tu servidor:
+- Frontend: `http://192.168.1.100`
+- Backend: `http://192.168.1.100/typo3`
+- Para obtener tu IP: `hostname -I`
+
 ## ⚙️ Configuración
 
-1. **Variables de entorno DB** — Configura `TYPO3_DB_HOST`, `TYPO3_DB_USERNAME`, `TYPO3_DB_PASSWORD`, `TYPO3_DB_DATABASE`, `TYPO3_DB_DRIVER` (mysqli/pdo_pgsql)
-2. **Credenciales MariaDB** — Define `MYSQL_ROOT_PASSWORD`, `MYSQL_USER`, `MYSQL_PASSWORD`, `MYSQL_DATABASE`
-3. **Charset DB** — `MYSQL_INITDB_ARGS=--character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci`
-4. **Healthcheck DB** — Verifica conectividad antes de iniciar TYPO3 (interval: 10s, timeout: 5s, retries: 5)
-5. **Volúmenes persistentes** — `fileadmin` (media), `typo3conf` (config), `typo3temp` (cache), `db` (datos)
-6. **Puerto expuesto** — `80:80` (cambiar a 8080:80 si hay conflicto)
-7. **PostgreSQL (opcional)** — Cambia driver a `pdo_pgsql` y usa imagen `postgres:16` con variables `POSTGRES_*`
+1. **Variables de entorno principales** (en docker-compose.yml):
+   - `TYPO3_DB_HOST`: Host de base de datos (db)
+   - `TYPO3_DB_USERNAME`: Usuario DB (typo3)
+   - `TYPO3_DB_PASSWORD`: Password DB
+   - `TYPO3_DB_DATABASE`: Nombre base de datos (typo3)
+   - `TYPO3_DB_DRIVER`: Driver (mysqli para MariaDB/MySQL, pgsql para PostgreSQL)
+
+2. **Volúmenes persistentes**:
+   - `typo3_fileadmin`: Archivos subidos (media, documentos)
+   - `typo3_typo3conf`: Configuración local (LocalConfiguration.php, extensiones)
+   - `typo3_typo3temp`: Archivos temporales, cache, assets procesados
+   - `typo3_db`: Datos MariaDB/MySQL
+
+3. **Base de datos**: Imagen permite MySQL, MariaDB, PostgreSQL. Composer incluye setup MariaDB standard. PostgreSQL requiere parámetro connection `TYPO3_DB_DRIVER=pgsql`
+
+4. **Reverse Proxy (Producción)**: Usar nginx/Traefik/Caddy en frente con HTTPS, security headers, rate limiting
+
+5. **Extensiones**: Instalables desde Backend → Admin Tools → Extension Manager
 
 ## 🚀 Primeros pasos
 
-1. **Backend login** — Abre `http://localhost/typo3`, ingresa username + password del install tool, dashboard TYPO3 aparece
-2. **Crear página** — Backend → Page tree (izquierda) → select "Home" o root page → click "+" → ingresa título → Type: Standard → Save
-3. **Agregar contenido** — Page tree → selecciona página → Tab "Content" → click "Create content" → Type: Text, Text & Image, Headlines → escribe con editor WYSIWYG → Save
-4. **Administrar usuarios** — Backend → System → Backend Users (o Web Users) → click "+" → ingresa datos (username, email, password) → asigna permissions (usergroup, página access) → Save
-5. **Crear menús** — Frontend → páginas auto-generan menu desde page tree → Template → setup TypoScript para posición menu → menu dinámico renderiza automático
-6. **Subir media** — Backend → File → Storage (fileadmin) → click upload, selecciona imágenes/PDFs → crea carpetas organiza assets → reference desde content editors
-7. **Publicar contenido** — Content → Edit page → Public checkbox → Si workflow: approve required → Frontend muestra página viva
+1. **Backend login**
+   - Abre `http://localhost/typo3`
+   - Username + password que configuraste en install
+   - Dashboard TYPO3 aparece
+
+2. **Crear página**
+   - Backend → Page tree (izquierda) → select "Home" o root page
+   - Click "+" para crear new page
+   - Ingresa título página
+   - Type: Standard (default)
+   - Save → página creada
+
+3. **Agregar contenido**
+   - Page tree → selecciona página
+   - Tab "Content" → click "Create content"
+   - Type: Text, Text & Image, Headlines, etc
+   - Escribe/pega contenido con editor WYSIWYG
+   - Save
+
+4. **Administrar usuarios**
+   - Backend → System → Backend Users (o Web Users)
+   - Click "+" para agregar usuario
+   - Ingresa datos (username, email, password)
+   - Asigna permissions (usergroup, página access)
+   - Save → usuario puede loguear
+
+5. **Crear menús**
+   - Frontend → páginas auto-generan menu desde page tree
+   - Template → setup TypoScript para posición menu
+   - Menú dinámico renderiza automático
+
+6. **Subir media**
+   - Backend → File → Storage (fileadmin)
+   - Click upload, selecciona imágenes/PDFs
+   - Crea carpetas organiza assets
+   - Reference desde content editors
+
+7. **Publicar contenido**
+   - Content → Edit page → Public checkbox
+   - Si workflow: approve required
+   - Frontend muestra página viva
 
 ## 💡 Casos de uso
 
-- **Sitios web corporativos** — Multi-página, contenido flexible, equipos de usuarios colaborativos
-- **Portales empresariales** — Escalable, multi-usuario, permisos granulares, workflow de aprobación
-- **Intranets** — Multi-site, multi-idioma, control de acceso, media management centralizado
-- **Media publishers** — Workflow publicación staging/live, histórico, versioning, editorial process
-- **Comunidad/foros (extensiones)** — TER marketplace plugins agregan funcionalidad social
-- **E-commerce (extensiones)** — Integra shop extensions, payment gateways, catálogos productos
+- **Sitios web corporativos**: Multi-página, contenido flexible, usuario teams
+- **Portales empresariales**: Escalable, multi-usuario, permisos granulares, workflow
+- **Intranets**: Multi-site, multi-idioma, acceso control, media management
+- **Media publishers**: Workflow publicación, staging/live, histórico, versioning
+- **Comunidad/forums (extensiones)**: TER marketplace plugins agrega funcionalidad
+- **E-commerce (extensiones)**: Integra shop extensions, payment gateways
 
 ## 🔒 Acceso remoto seguro
 
-Para acceso externo seguro, **usa siempre un reverse proxy** con HTTPS:
+Para exponer TYPO3 de forma segura a Internet:
 
-```yaml
-# Ejemplo con nginx-proxy + letsencrypt (docker-compose override)
-services:
-  typo3:
-    environment:
-      - VIRTUAL_HOST=typo3.tudominio.com
-      - LETSENCRYPT_HOST=typo3.tudominio.com
-      - LETSENCRYPT_EMAIL=admin@tudominio.com
-    expose:
-      - "80"
-    # Eliminar ports: - "80:80" cuando uses reverse proxy
-```
-
-**Nunca expongas el puerto 80/443 directamente a Internet** sin TLS termination y security headers.
+1. **Reverse Proxy obligatorio**: nginx, Traefik, Caddy con HTTPS (Let's Encrypt)
+2. **Security headers**: HSTS, CSP, X-Frame-Options, Referrer-Policy
+3. **Rate limiting**: Proteger login backend y install tool
+4. **IP whitelist**: Restringir acceso a `/typo3/install` solo IPs de confianza
+5. **Fail2ban**: Bloquear intentos de fuerza bruta
+6. **VPN/Tailscale**: Acceso admin solo via VPN para máxima seguridad
+7. **Authelia/Authelia**: SSO + 2FA delante del backend
 
 ## 🛠️ Gestión y mantenimiento
 
-| Acción | Comando |
-|--------|---------|
-| **Ver estado** | `docker compose ps` |
-| **Ver logs TYPO3** | `docker compose logs -f typo3` |
-| **Ver logs DB** | `docker compose logs -f db` |
-| **Detener** | `docker compose down` |
-| **Actualizar versión** | Cambiar tag en compose → `docker compose pull` → `docker compose up -d` |
-| **Backup DB** | `docker compose exec db mysqldump -u typo3 -ptypo3password123 typo3 > backup.sql` |
-| **Restore DB** | `docker compose exec -T db mysql -u typo3 -ptypo3password123 typo3 < backup.sql` |
-| **Shell TYPO3** | `docker compose exec typo3 bash` |
-| **Monitorear recursos** | `docker stats typo3 db` |
+### Ver estado
+```bash
+docker compose ps
+```
 
-**Consumo típico**:
-- `typo3`: 200-400MB RAM
-- `db`: 200-600MB RAM
+### Ver logs
+```bash
+docker compose logs -f typo3
+docker compose logs -f db
+```
+
+### Detener TYPO3
+```bash
+docker compose down
+```
+
+### Actualizar versión
+```bash
+# Cambiar imagen tag en compose (ej: martinhelmich/typo3:13 → :13.4)
+docker compose pull
+docker compose up -d
+```
+
+### Backup base datos
+```bash
+docker compose exec db mysqldump -u typo3 -ptypo3password123 typo3 > backup.sql
+```
+
+### Restore base datos
+```bash
+docker compose exec -T db mysql -u typo3 -ptypo3password123 typo3 < backup.sql
+```
+
+### Acceder shell TYPO3
+```bash
+docker compose exec typo3 bash
+```
+
+### Monitorear consumo
+```bash
+docker stats typo3 db
+# Típicamente:
+# typo3: 200-400MB RAM
+# db: 200-600MB RAM
+```
 
 ### Marketplace TER (TYPO3 Extension Repository)
 
-Instalables desde **Backend → Admin Tools → Extension Manager**:
+TYPO3 soporta miles extensiones vía TER marketplace. Instalables desde backend.
 
-| Extensión | Clave | Descripción |
-|-----------|-------|-------------|
-| **News** | `news` | Sistema news/blog con tags, categories. Must-have. |
-| **Powermail** | `powermail` | Form builder, email integrations. Popular. |
-| **Mask** | `mask` | Advanced content types builder. Powerful. |
-| **Commerce** | `commerce` | E-commerce suite (payment, orders). |
-| **SEO** | `seo` | SEO toolkit (sitemap.xml, robots.txt, metadata). |
+**Extensiones populares:**
+- **News (news)**: News/blog system con tags, categories. Must-have.
+- **Powermail (powermail)**: Form builder, email integrations. Popular.
+- **Mask (mask)**: Advanced content types builder. Powerful.
+- **Commerce (commerc)**: E-commerce suite (payment, orders).
+- **SEO (seo)**: SEO toolkit (sitemap.xml, robots.txt, metadata).
+
+**Instalar extensión:**
+Backend → Admin Tools → Extension Manager → search + install
 
 ## 📝 Licencia
 
-**GPL-3.0 Open Source** — [Ver licencia completa](https://www.gnu.org/licenses/gpl-3.0.html)
-
-TYPO3 es software libre: puedes redistribuirlo y/o modificarlo bajo los términos de la GNU General Public License versión 3.
+**GPL-3.0 open source** - Software libre, puedes usar, modificar y distribuir bajo los términos de la licencia GPL-3.0.
 
 ---
 
-> 📖 **Guía completa en el blog**: [Cómo instalar TYPO3 en Docker - CMS profesional autohospedado](https://genbyte.blogspot.com/2026/09/como-instalar-typo3-en-docker-cms.html)
->
+> 📖 **Artículo original**: [Cómo instalar TYPO3 en Docker - CMS profesional autohospedado](https://genbyte.blogspot.com/2026/09/como-instalar-typo3-en-docker-cms.html)
+> 
 > 🐳 **Imagen Docker oficial**: [martinhelmich/typo3](https://hub.docker.com/r/martinhelmich/typo3) | [GitHub](https://github.com/martin-helmich/docker-typo3)
->
+> 
 > 📚 **Documentación oficial**: [TYPO3 Documentation](https://docs.typo3.org/)
